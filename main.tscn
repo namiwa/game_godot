@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://byaer3c3bwof6"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_bb1ub"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_bb1ub")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 475.0
+offset_top = 296.0
+offset_right = 612.0
+offset_bottom = 320.0
+text = "where is the love
+"
