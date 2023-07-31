@@ -8,19 +8,20 @@ rotation = -0.00367901
 scale = Vector2(3.59846, 4.71508)
 script = ExtResource("1_ncjh4")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 100.276
-offset_top = 67.0889
-offset_right = 190.276
-offset_bottom = 101.089
-text = "Play
-"
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 107.673
-offset_top = 31.4791
-offset_right = 185.673
-offset_bottom = 58.4791
-text = "Word Flip"
+offset_left = 111.628
+offset_top = 18.1287
+offset_right = 201.628
+offset_bottom = 40.1287
+text = "This is a test"
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 110.9
+offset_top = 53.7573
+offset_right = 199.9
+offset_bottom = 92.7573
+text = "the button"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
