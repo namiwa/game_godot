@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://byaer3c3bwof6"]
+[gd_scene load_steps=6 format=3 uid="uid://byaer3c3bwof6"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bb1ub"]
+[ext_resource type="Texture2D" uid="uid://dmmbgdidttaaw" path="res://icon.svg" id="2_g5mmk"]
+[ext_resource type="Script" path="res://Player.gd" id="2_hoowm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qcqv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g5mmk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e782k"]
+size = Vector2(238, 236)
 
 [node name="main" type="Node2D"]
+position = Vector2(132, 78)
 script = ExtResource("1_bb1ub")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -12,3 +29,16 @@ offset_right = 612.0
 offset_bottom = 320.0
 text = "where is the love
 "
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(829, 318)
+script = ExtResource("2_hoowm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_qcqv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 1)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_e782k")
