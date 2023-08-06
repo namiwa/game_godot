@@ -26,5 +26,6 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.stop()
 	
-	print_debug('my speed', velocity)
-	position = velocity * delta
+	position += velocity * delta
+	print_debug(position, screen_size)
+	position = position.clamp(Vector2.ZERO, screen_size - Vector2(speed / 2, speed / 2))
