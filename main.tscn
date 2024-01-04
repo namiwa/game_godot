@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://byaer3c3bwof6"]
+[gd_scene load_steps=7 format=3 uid="uid://byaer3c3bwof6"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bb1ub"]
 [ext_resource type="Texture2D" uid="uid://dmmbgdidttaaw" path="res://icon.svg" id="2_g5mmk"]
 [ext_resource type="Script" path="res://Player.gd" id="2_hoowm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_er7lt"]
+size = Vector2(1148, 22)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qcqv2"]
 animations = [{
@@ -22,6 +25,14 @@ size = Vector2(238, 236)
 position = Vector2(132, 78)
 script = ExtResource("1_bb1ub")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(829, 318)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-387, 195)
+shape = SubResource("RectangleShape2D_er7lt")
+one_way_collision_margin = 0.0
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 475.0
 offset_top = 296.0
@@ -32,6 +43,8 @@ text = "where is the love
 
 [node name="Player" type="Area2D" parent="."]
 position = Vector2(829, 318)
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
 script = ExtResource("2_hoowm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]

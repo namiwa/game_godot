@@ -29,3 +29,5 @@ func _process(delta):
 	position += velocity * delta
 	print_debug(position, screen_size)
 	position = position.clamp(Vector2.ZERO, screen_size - Vector2(speed / 2, speed / 2))
+	
+	
