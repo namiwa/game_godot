@@ -10,6 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# controlled 2D movement
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
@@ -27,7 +28,6 @@ func _process(delta):
 		$AnimatedSprite2D.stop()
 	
 	position += velocity * delta
-	print_debug(position, screen_size)
 	position = position.clamp(Vector2.ZERO, screen_size - Vector2(speed / 2, speed / 2))
 	
 	
