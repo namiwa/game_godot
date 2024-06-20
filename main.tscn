@@ -1,57 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://byaer3c3bwof6"]
+[gd_scene load_steps=2 format=3 uid="uid://dcn5t6ysd1act"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_bb1ub"]
-[ext_resource type="Texture2D" uid="uid://dmmbgdidttaaw" path="res://icon.svg" id="2_g5mmk"]
-[ext_resource type="Script" path="res://Player.gd" id="2_hoowm"]
+[ext_resource type="PackedScene" uid="uid://rjo5ve5u3etq" path="res://base_ship.tscn" id="1_1jlvr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_er7lt"]
-size = Vector2(1148, 22)
+[node name="root" type="Node2D"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qcqv2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_g5mmk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e782k"]
-size = Vector2(238, 236)
-
-[node name="main" type="Node2D"]
-position = Vector2(132, 78)
-script = ExtResource("1_bb1ub")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(829, 318)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-387, 195)
-shape = SubResource("RectangleShape2D_er7lt")
-one_way_collision_margin = 0.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 475.0
-offset_top = 296.0
-offset_right = 612.0
-offset_bottom = 320.0
-text = "where is the love
-"
-
-[node name="Player" type="Area2D" parent="."]
-position = Vector2(829, 318)
-gravity_point_center = Vector2(0, 0)
-gravity_direction = Vector2(0, 0)
-script = ExtResource("2_hoowm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(0, 1)
-sprite_frames = SubResource("SpriteFrames_qcqv2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 1)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_e782k")
+[node name="base_ship" parent="." instance=ExtResource("1_1jlvr")]
+position = Vector2(-3, -7)
