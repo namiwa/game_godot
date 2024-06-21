@@ -4,7 +4,9 @@
 
 [node name="root" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="base_ship" parent="." instance=ExtResource("1_1jlvr")]
-position = Vector2(-3, -7)
+position = Vector2(960, 540)
+speed = 400
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(960, 540)

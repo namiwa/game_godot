@@ -7,7 +7,6 @@
 
 [node name="base_ship" type="CharacterBody2D"]
 script = ExtResource("1_by6od")
-speed = 6000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(6, 6)

@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-@export var speed = 60000
-
+@export var speed = 400
+var screen_size
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("player movement loaded")
-
+	screen_size = get_viewport_rect().size
+	print("player movement loaded, screen_size: ", screen_size)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,5 +25,4 @@ func _process(delta):
 		velocity = velocity.normalized() * speed
 	
 	position += velocity * delta
-	
-	
+	position = position.clamp(Vector2.ZERO, screen_size)
